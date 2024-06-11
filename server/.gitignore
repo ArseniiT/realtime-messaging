@@ -1,0 +1,148 @@
+# Node modules directory
+node_modules/
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Dependency directories
+jspm_packages/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output/
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt/
+
+# Bower dependency directory (https://bower.io/)
+bower_components/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# MacOS system files
+.DS_Store
+
+# npm cache directory
+.npm/
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment files
+.env.*
+
+# Parcel-bundler cache (https://parceljs.org/)
+.cache/
+
+# Next.js build output
+.next/
+
+# Nuxt.js build output
+.nuxt/
+
+# SvelteKit build output
+.svelte-kit/
+
+# Gatsby files
+.cache/
+public/
+
+# Temporary files
+tmp/
+temp/
+
+# Build output directories
+dist/
+build/
+
+# Static file caches
+public/assets/
+public/static/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# microbundle output
+dist/
+
+# serverless directories
+.serverless/
+
+# Terraform directories
+.terraform/
+
+# Sapper build / export
+__sapper__/
+
+# VS Code
+.vscode/
+.history
+
+# WebStorm
+.idea/
+*.iml
+
+# Pnpm
+.pnpm-debug.log*
+.pnp.*
+.pnpjs.*
+modules/
+node_modules/
+
+# Pipfile and virtualenv files
+Pipfile.lock
+__pycache__/
+
+# Prisma
+prisma/migrations/
+
+# Storybook files
+.storybook/
+storybook-static/
+
+# TypeScript generated files
+*.tsbuildinfo
+lib-cjs/
+lib-esm/
+tsconfig.build.tsbuildinfo
+
+# JetBrains Rider
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+/.vs/
+.vscode/
+
+# Additional files
+npm-debug.log
+yarn-error.log
+lerna-debug.log
