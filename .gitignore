@@ -1,0 +1,123 @@
+# Node.js dependencies
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+/node_modules
+jspm_packages/
+frontend/node_modules/
+backend/node_modules/
+
+# Testing
+/coverage
+
+# Next.js
+.next/
+/out/
+
+# Production
+/build
+
+# Cache
+.cache
+/coverage/
+.nyc_output/
+.waste/
+
+# dotenv environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# parcel-bundler cache (and source maps)
+.cache
+dist/
+*.map
+
+# Others
+.DS_Store
+*.pem
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# Stylelint cache
+.stylelintcache
+
+# Temporary folders
+/tmp
+/temp
+
+# Bower dependency directory
+bower_components
+
+# Protractor
+/coverage-e2e/
+
+# TypeScript
+lib-cov
+*.tsbuildinfo
+
+# Optional jest cache directory
+/jest/
+
+# Parcel cache
+.cache/
+
+# Storybook files
+storybook-static

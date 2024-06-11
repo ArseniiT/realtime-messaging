@@ -1,0 +1,13 @@
+{
+    "name": "realtime-experiments",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "concurrently \"npm run server:lp\" \"npm run client\"",
+        "server:lp": "cd server && npm run start:lp",
+        "client": "cd client && npm run start"
+    },
+    "devDependencies": {
+        "concurrently": "^6.5.1",
+        "nodemon": "^2.0.7"
+    }
+}
