@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const LongPolling = () => {
+    const [messages, setMessages] = useState([]);
+    const [value, setValue] = useState('');
+
+    const sendMessage = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/lp/send-message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: value,
+                    id: Date.now(),
+                 }),
+            });
+            if (response.ok) {
+                setValue('');
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className='w-full max-w-xs'>
@@ -9,15 +32,28 @@ const LongPolling = () => {
                 <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='message'>
                     Message
                 </label>
-                <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' id='message' type='text' placeholder='Hello'>
+                <input
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' id='message' type='text' placeholder='Hello'>
                 </input>
                 </div>
                 <div className='flex items-center justify-between'>
-                <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='button'>
+                <button
+                    onClick={sendMessage}
+                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='button'>
                     Send Message
                 </button>
                 </div>
             </form>
+            </div>
+
+            <div className='messages'>
+                {messages.map((message) => (
+                    <div key={message.id} className='bg-gray-200 p-2 m-2 rounded-lg'>
+                        {message.value}
+                    </div>
+                ))}
             </div>
         </div>
     );

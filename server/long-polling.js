@@ -9,9 +9,10 @@ const eventEmitter = new events.EventEmitter();
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 app.get('/lp/get-message', (req, res) => {
-    emmiter.once('message', (message) => {
+    eventEmitter.once('message', (message) => {
         res.status(200).send(message);
     });
 });
@@ -19,7 +20,7 @@ app.get('/lp/get-message', (req, res) => {
 app.post('/lp/send-message', (req, res) => {
     const msgFromBody = req.body.message;
 
-    emmiter.emit('message', msgFromBody);
+    eventEmitter.emit('message', msgFromBody);
 
     res.status(200).send('Message sent');
 });
