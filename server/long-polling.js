@@ -11,14 +11,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/lp/get-message', (req, res) => {
+app.get('/lp/get-messages', (req, res) => {
     eventEmitter.once('message', (message) => {
-        res.status(200).send(message);
+        res.json(message);
     });
 });
 
 app.post('/lp/send-message', (req, res) => {
-    const msgFromBody = req.body.message;
+    const msgFromBody = req.body;
 
     eventEmitter.emit('message', msgFromBody);
 
