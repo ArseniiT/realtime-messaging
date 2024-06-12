@@ -5,7 +5,7 @@ import EventSourcing from './EventSourcing';
 import WebSocketComponent from './WebSocketComponent';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('EventSourcing');
+  const [activeTab, setActiveTab] = useState('WebSocket');
 
   const renderComponent = () => {
     switch (activeTab) {

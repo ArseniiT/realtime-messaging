@@ -2,8 +2,12 @@
     "name": "realtime-experiments",
     "version": "1.0.0",
     "scripts": {
-        "start": "concurrently \"npm run server:lp\" \"npm run client\"",
+        "start:lp": "concurrently \"npm run server:lp\" \"npm run client\"",
+        "start:es": "concurrently \"npm run server:es\" \"npm run client\"",
+        "start:skt": "concurrently \"npm run server:skt\" \"npm run client\"",
         "server:lp": "cd server && npm run start:lp",
+        "server:es": "cd server && npm run start:es",
+        "server:skt": "cd server && npm run start:skt",
         "client": "cd client && npm run start"
     },
     "devDependencies": {

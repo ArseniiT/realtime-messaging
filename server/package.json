@@ -6,7 +6,7 @@
   "scripts": {
     "start:lp": "nodemon long-polling.js",
     "start:es": "nodemon event-sourcing.js",
-    "start:skt": "nodemon socket.js"
+    "start:skt": "nodemon websocket.js"
   },
   "keywords": [],
   "author": "",
