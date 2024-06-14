@@ -13,6 +13,12 @@ const WebSocketComponent = () => {
 
         socket.current.onopen = () => {
             setIsConnected(true);
+            const message = {
+                type: 'connection',
+                data: userName,
+                id: Date.now(),
+            };
+            socket.current.send(JSON.stringify(message));
             console.log('Connection opened');
         };
 
@@ -32,28 +38,20 @@ const WebSocketComponent = () => {
 
 
     const sendMessage = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/lp/send-message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    message: value,
-                    id: Date.now(),
-                }),
-            });
-            if (response.ok) {
-                setValue('');
-            }
-        } catch (error) {
-            console.error(error);
-        }
+        const message = {
+            type: 'message',
+            data: userName,
+            message: value,
+            id: Date.now(),
+        };
+
+        socket.current.send(JSON.stringify(message));
+        setValue('');
     };
 
     if (!isConnected) {
         return (
-            <div className='items-center'>
+            <div className='flex flex-col justify-start items-center h-screen pt-16'>
                 <div className='w-full max-w-xs m-0'>
                     <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
                         <div className='mb-4'>
@@ -118,7 +116,10 @@ const WebSocketComponent = () => {
             <div className='w-full max-w-xs'>
                 {messages.map((message) => (
                     <div key={message.id} className='bg-gray-200 p-2 m-2 rounded-lg'>
-                        {message.value}
+                        {message.type === 'connection' ?
+                            <div>User {message.data}  connected.</div> :
+                            <div>{message.data}. {message.message}</div>
+                        }
                     </div>
                 ))}
             </div>
